@@ -29,6 +29,9 @@ export class User extends Model {
   @Column(DataType.STRING)
   lastName: string
 
+  @Column(DataType.STRING)
+  username: string
+
   @CreatedAt
   creationDate: Date
 
