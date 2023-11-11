@@ -3,13 +3,14 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 
 import connectToDb from './db'
-import users from './routes/users'
+
+import apiRoutes from './routes/api'
 
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
-app.use('/users', users)
+app.use('/api', apiRoutes)
 
 app.use('/', (_, res) => {
   res.status(200).send('success')

@@ -10,9 +10,15 @@ import {
   UpdatedAt,
   DataType,
   Default,
+  Scopes,
 } from 'sequelize-typescript'
 import { User } from './user.model'
 
+@Scopes(() => ({
+  withUsers: {
+    include: [User],
+  },
+}))
 @Table({
   underscored: true,
 })

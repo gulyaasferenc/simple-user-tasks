@@ -9,9 +9,15 @@ import {
   UpdatedAt,
   DataType,
   Default,
+  Scopes,
 } from 'sequelize-typescript'
 import { Task } from './task.model'
 
+@Scopes(() => ({
+  withTasks: {
+    include: [Task],
+  },
+}))
 @Table({
   timestamps: true,
   underscored: true,
