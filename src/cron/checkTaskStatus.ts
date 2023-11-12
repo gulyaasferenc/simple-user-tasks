@@ -19,7 +19,6 @@ export const taskStatusCronJob = CronJob.from({
 
       if (tasks.length) {
         // I do not use Promise.all in such cases because it can cause massive perforamce issue.
-
         for (const task of tasks) {
           await task.update(
             {
