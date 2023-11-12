@@ -11,6 +11,7 @@ import {
   DataType,
   Default,
   Scopes,
+  Unique,
 } from 'sequelize-typescript'
 import { User } from './user.model'
 
@@ -29,17 +30,19 @@ export class Task extends Model {
   @Column(DataType.STRING)
   id: string
 
+  @Unique
   @Column(DataType.STRING)
   name: string
 
   @Column(DataType.STRING)
   description: string
 
+  @Default('todo')
   @Column(DataType.STRING)
   status: 'todo' | 'pending' | 'done'
 
   @Column(DataType.DATE)
-  nextExecuteDateTime: Date
+  endDate: Date
 
   @CreatedAt
   creationDate: Date
