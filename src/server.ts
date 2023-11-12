@@ -18,7 +18,10 @@ app.use('/', (_, res) => {
   res.status(200).send('success')
 })
 
+// from now, exported sequelize from ./db/index.ts is a valid sequelize object with a db connection
 connectToDb().then(() => {
-  logger.info('started jobs:', taskStatusCronJob.lastExecution)
+  logger.info(
+    `started scheduled job, task-checker; isRunning: ${taskStatusCronJob.running}`
+  )
   app.listen(3000, () => logger.info('user-task is alive'))
 })

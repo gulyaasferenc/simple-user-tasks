@@ -6,7 +6,7 @@ import {
   getTask,
   updateTask,
 } from '../../controller/tasks/tasks.controllers'
-import { validateTask } from '../../middleware/validator/validateTask'
+import { validateTask } from '../../middleware/validator'
 
 const router = Router()
 

@@ -9,7 +9,7 @@ export const taskStatusCronJob = CronJob.from({
   onTick: async () => {
     logger.info('Task checker job run')
     // Use transaction to avoid anomaly if an error occurs during the updates
-    // Either all taskas will be updated or none
+    // Either all tasks will be updated or none
     const t = await sequelize.transaction()
 
     try {
@@ -18,7 +18,7 @@ export const taskStatusCronJob = CronJob.from({
       })
 
       if (tasks.length) {
-        // I do not use Promise all in such cases because it can cause massive perforamce issue.
+        // I do not use Promise.all in such cases because it can cause massive perforamce issue.
 
         for (const task of tasks) {
           await task.update(
