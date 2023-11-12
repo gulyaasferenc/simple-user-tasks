@@ -5,6 +5,8 @@ import cors from 'cors'
 import connectToDb from './db'
 
 import apiRoutes from './routes/api'
+import { taskStatusCronJob } from './cron/checkTaskStatus'
+import { logger } from './utils/logger/logger'
 
 const app = express()
 app.use(cors())
@@ -16,6 +18,7 @@ app.use('/', (_, res) => {
   res.status(200).send('success')
 })
 
-connectToDb().then(() =>
-  app.listen(3000, () => console.log('user-task is alive'))
-)
+connectToDb().then(() => {
+  logger.info('started jobs:', taskStatusCronJob.lastExecution)
+  app.listen(3000, () => logger.info('user-task is alive'))
+})

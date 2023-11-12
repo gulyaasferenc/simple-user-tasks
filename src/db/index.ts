@@ -2,8 +2,10 @@ import { Sequelize } from 'sequelize-typescript'
 
 import * as models from './models'
 
+export let sequelize: Sequelize
+
 const connectToDb = async () => {
-  const sequelize = new Sequelize({
+  sequelize = new Sequelize({
     username: 'user',
     password: 'password',
     database: 'db',
