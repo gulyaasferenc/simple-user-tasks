@@ -1,6 +1,6 @@
 ## Simple user-tasks
 
-> - Basic mvc project with CRUDL Rest Api
+> - Basic mvc (mrc) project with CRUDL Rest Api
 > - A cron job is started with the service that check endDate property of the pending tasks and set done status if that time is already passed.
 > - .env file is added, because it is not a project for production.
 
