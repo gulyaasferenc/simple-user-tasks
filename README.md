@@ -2,29 +2,45 @@
 
 > - Basic mvc project with CRUDL Rest Api
 > - A cron job is started with the service that check endDate property of the pending tasks and set done status if that time is already passed.
+> - .env file is added, because it is not a project for production.
 
 ### How to start
 
-- Start the db:
-  ```sh
-    cd docker && docker-compose up -d && cd ..
-  ```
-- Install 3rd parties:
-  ```sh
-    yarn
-  ```
-- Run migration:
-  ```sh
-    yarn migrate:up
-  ```
-- Compile ts:
-  ```sh
-    yarn tsc
-  ```
-- Start the service:
-  ```sh
-    yarn start:dev
-  ```
+#### Start the db:
+
+```sh
+  cd docker && docker-compose up -d && cd ..
+```
+
+#### Install 3rd parties:
+
+```sh
+  yarn
+```
+
+#### Run migration:
+
+```sh
+  yarn migrate:up
+```
+
+#### Compile ts:
+
+```sh
+  yarn tsc
+```
+
+#### Start the service:
+
+```sh
+  yarn start
+```
+
+_or if you want to change some code while testing:_
+
+```sh
+  yarn start:dev
+```
 
 ### How to test
 
