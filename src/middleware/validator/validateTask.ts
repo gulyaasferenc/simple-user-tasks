@@ -10,6 +10,6 @@ export const validateTask = async <RequestParam, RequestResponse, RequestBody>(
     await baseTask.validateAsync(req.body)
     next()
   } catch (error) {
-    res.status(403).send(error)
+    res.status(400).send(error)
   }
 }

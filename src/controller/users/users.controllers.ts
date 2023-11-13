@@ -8,13 +8,9 @@ export const createUser = async (
   req: Request<undefined, UserResponse, BaseUser>,
   res: Response
 ) => {
-  const body: BaseUser = req.body
-
   try {
     const user = await User.create({
-      ...body,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      ...req.body,
     })
     console.log(user.getName())
     res.status(201).send(user)
@@ -34,11 +30,7 @@ export const updateUser = async (
       return res.status(404).send('User not found')
     }
 
-    const updatedUser = await user.update({
-      ...user,
-      ...req.body,
-      updatedAt: new Date(),
-    })
+    const updatedUser = await user.update({ ...req.body })
 
     res.status(201).send(updatedUser)
   } catch (error) {

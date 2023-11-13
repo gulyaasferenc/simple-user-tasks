@@ -2,7 +2,7 @@ export interface BaseTask {
   name: string
   description?: string
   status?: 'todo' | 'pending' | 'done'
-  nextExecuteDateTime?: Date
+  endDate?: Date
 }
 
 export interface TaskResponse extends BaseTask {

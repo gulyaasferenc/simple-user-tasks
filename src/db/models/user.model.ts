@@ -19,7 +19,6 @@ import { Task } from './task.model'
   },
 }))
 @Table({
-  timestamps: true,
   underscored: true,
 })
 export class User extends Model {

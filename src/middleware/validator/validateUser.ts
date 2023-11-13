@@ -11,6 +11,6 @@ export const validateUser = async <RequestParam, RequestResponse, RequestBody>(
     await baseUserEntity.validateAsync(req.body)
     next()
   } catch (error) {
-    res.status(403).send(error)
+    res.status(400).send(error)
   }
 }
