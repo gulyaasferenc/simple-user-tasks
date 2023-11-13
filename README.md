@@ -5,11 +5,26 @@
 
 ### How to start
 
-- Start the db: `cd docker && docker-compose up -d && cd ..`
-- Install 3rd parties: `yarn`
-- Run migration: `yarn migrate:up`
-- Compile ts: `yarn tsc`
-- Start the service: `yarn start:dev`
+- Start the db:
+  ```sh
+    cd docker && docker-compose up -d && cd ..
+  ```
+- Install 3rd parties:
+  ```sh
+    yarn
+  ```
+- Run migration:
+  ```sh
+    yarn migrate:up
+  ```
+- Compile ts:
+  ```sh
+    yarn tsc
+  ```
+- Start the service:
+  ```sh
+    yarn start:dev
+  ```
 
 ### How to test
 
