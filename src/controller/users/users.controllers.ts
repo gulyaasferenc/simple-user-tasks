@@ -3,6 +3,7 @@ import { Request, Response } from 'express'
 import { User } from '../../db/models/user.model'
 import { BaseUser, ParamsWithId, UserResponse } from './users.iterfaces'
 import { Task } from '../../db/models'
+import { logger } from '../../utils/logger/logger'
 
 export const createUser = async (
   req: Request<undefined, UserResponse, BaseUser>,
@@ -15,6 +16,7 @@ export const createUser = async (
     console.log(user.getName())
     res.status(201).send(user)
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }
@@ -34,6 +36,7 @@ export const updateUser = async (
 
     res.status(201).send(updatedUser)
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }
@@ -44,6 +47,7 @@ export const listAllUsers = async (req: Request, res: Response) => {
 
     res.status(200).send(userList)
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }
@@ -54,6 +58,7 @@ export const getUser = async (req: Request<ParamsWithId>, res: Response) => {
 
     user ? res.status(200).send(user) : res.status(404).send('User not found')
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }
@@ -67,6 +72,7 @@ export const getUserTasks = async (
 
     res.status(200).send(taskList)
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }

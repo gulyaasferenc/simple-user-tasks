@@ -6,6 +6,7 @@ import {
   TaskResponse,
 } from './tasks.interfaces'
 import { Task } from '../../db/models'
+import { logger } from '../../utils/logger/logger'
 
 export const createTask = async (
   req: Request<null, TaskResponse, BaseTask>,
@@ -16,6 +17,7 @@ export const createTask = async (
 
     res.status(201).send(task)
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }
@@ -35,6 +37,7 @@ export const assignTask = async (
 
     res.status(201).send(updatedTask)
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }
@@ -64,6 +67,7 @@ export const updateTask = async (
 
     res.status(201).send(updatedTask)
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }
@@ -83,6 +87,7 @@ export const deleteTask = async (
 
     res.status(200).send()
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }
@@ -96,6 +101,7 @@ export const getTask = async (
 
     task ? res.status(200).send(task) : res.status(404).send('Task not found')
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }
@@ -115,6 +121,7 @@ export const unAssign = async (
 
     res.status(201).send(updatedTask)
   } catch (error) {
+    logger.error(error)
     res.status(500).send(error)
   }
 }
