@@ -1,7 +1,7 @@
 ## Simple user-tasks
 
 > - Basic mvc project with CRUDL Rest Api
-> - A cron job is started with the service that check enDate property of the pending tasks and set done status if that time is already passed.
+> - A cron job is started with the service that check endDate property of the pending tasks and set done status if that time is already passed.
 
 ### How to start
 
