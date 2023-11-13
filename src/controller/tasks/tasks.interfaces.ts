@@ -6,8 +6,8 @@ export interface BaseTask {
 }
 
 export interface TaskResponse extends BaseTask {
-  createdAt: Date
-  updatedAt: Date
+  creationDate: Date
+  updatedon: Date
 }
 
 export interface ParamsWithId {

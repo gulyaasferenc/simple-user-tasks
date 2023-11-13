@@ -9,6 +9,6 @@ export interface BaseUser {
 }
 
 export interface UserResponse extends BaseUser {
-  createdAt: Date
-  updatedAt: Date
+  creationDate: Date
+  updatedon: Date
 }
